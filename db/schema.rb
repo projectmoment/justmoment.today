@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20180823152210) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "identities", ["user_id"], name: "index_identities_on_user_id"
+  #add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

@@ -54,6 +54,8 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
   
+
+ 
  def post_params
    params.require(:post).permit(:title, :content, :image, :game_type)
  end
