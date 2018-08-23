@@ -1,16 +1,4 @@
 <h1>새로운 post 입력페이지 입니다.</h1>
-<form action="/posts/create" method="post">
-    <p>제목</p>
-    <input type="text" name="input_title">
-    <p>내용</p>
-    <input type="text" name="input_content">
-    <div class="field">
-        <%= f.label :image %><br>
-        <%= f.file_field :image %>
-    </div>
-    <br><br>
-    <input type="submit">
-    <br><br>
-</form>
+<%= render partial: "form" %>
 
 <a href="/">홈으로</a>

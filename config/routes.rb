@@ -3,27 +3,7 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks' }
  
-# Posts
-
-  #Read
-  get '/posts/index'
-  get '/posts/show/:post_id' => 'posts#show'
-  
-  #create
-  get '/posts/new'
-  post '/posts/create' => 'posts#create'
-  
-  
-  #update
-  get '/posts/edit/:post_id' => 'posts#edit'
-  post '/posts/update/:post_id' => 'posts#update'
-  
-  #delete
-  post '/posts/destroy/:post_id' => 'posts#destroy'
-
-  
-# Comments
-  get '/posts/:post_id/comments/create' => 'comments#create'
-  get '/posts/:post_id/comments/destroy/:id' => 'comments#destroy'
+  resources :posts
+  resources :comments, only: [:create, :destroy]
 
 end
