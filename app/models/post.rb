@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
     has_many :comments
     
     require 'carrierwave/orm/activerecord'
-    mount_uploader :image_url, ImageUploader
+    mount_uploader :image, ImageUploader
     
     enum game_type: ["lol", "battle", "blizzard", "nexon", "steam", "mobile"]
 end
