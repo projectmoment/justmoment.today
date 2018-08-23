@@ -23,7 +23,7 @@ Rails.application.routes.draw do
 
   
 # Comments
-  post '/comments/create' => 'comments#create'
-  get '/comments/destroy/:id' => 'comments#destroy'
+  get '/posts/:post_id/comments/create' => 'comments#create'
+  get '/posts/:post_id/comments/destroy/:id' => 'comments#destroy'
 
 end
