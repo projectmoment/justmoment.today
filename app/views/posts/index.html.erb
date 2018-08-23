@@ -1,0 +1,31 @@
+<h1>
+    <% if user_signed_in? %>
+        <%= link_to 'logOut', new_user_session_path, method: :get %>
+    <% else %>
+        <%= link_to 'logIn', destroy_user_session_path, method: :delete %>
+        <%= link_to 'sign_up', new_user_registration_path, method: :get %>
+    <% end %>
+</h1>
+
+<h5><%= current_user.email %></h5>
+
+<h1>게시판 입니다!</h1>
+<div class="board">
+    <!-- 게시글 작성 -->
+    <% @posts.each do |post|%>
+        <div class="content">
+            <span><%= post.id %></span>
+            <span><a href="/posts/show/<%= post.id %>"><%= post.title %><br><br></a></span>
+            <% if post.user_id == current_user.id%>
+            <span><a href="/posts/destroy/<%= post.id %>" data-method="POST">삭제</a></span>
+            <span>&nbsp;</span>
+            <span><a href="/posts/edit/<%= post.id %>">수정<br><br></a></span>
+            <% end %>
+        </div> <!-- post content -->
+        
+
+
+    <% end %> <!-- posts each do -->
+</div>
+
+<div><a href="/posts/new">글 작 성 하 기</a></div>
