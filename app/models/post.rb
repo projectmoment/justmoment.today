@@ -5,5 +5,5 @@ class Post < ActiveRecord::Base
     require 'carrierwave/orm/activerecord'
     mount_uploader :image_url, ImageUploader
     
-    enum game_type: ["lol", "battle"]
+    enum game_type: ["lol", "battle", "blizzard", "nexon", "steam", "mobile"]
 end

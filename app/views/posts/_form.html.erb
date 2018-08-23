@@ -1,4 +1,25 @@
-<div class="field">
-    <%= f.label :image_url %><br>
-    <%= f.file_field :image_url %>
-</div>
+<%= form_for @post do |f| %>
+    <div class="field">
+        <%= f.select(:game_type) do %>
+          <% [['리그오브레전드', 0], ['배틀그라운드', 1], ['블리자드', 2], ['넥슨', 3], ['스팀', 4], ['모바일', 5].each do |c| -%>
+            <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :title, '제목' %>
+        <%= f.text_field :title %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :content, '내용' %>
+        <%= f.text_area :content %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :image, '이미지' %>
+        <%= f.file_field :image %>
+    </div>
+    <%= f.submit '제출' %>
+<% end %>
