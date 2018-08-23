@@ -49,6 +49,11 @@ class PostsController < ApplicationController
    redirect_to '/'
  end
  
+ def mypage
+   
+    @posts = Post.all
+  end
+  
  def post_params
    params.require(:post).permit(:title, :content, :image, :game_type)
  end

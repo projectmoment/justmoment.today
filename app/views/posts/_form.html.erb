@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
     <div class="field">
         <%= f.select(:game_type) do %>
-          <% [['리그오브레전드', 0], ['배틀그라운드', 1], ['블리자드', 2], ['넥슨', 3], ['스팀', 4], ['모바일', 5].each do |c| -%>
+          <% [['리그오브레전드', "lol"], ['배틀그라운드', "battle"], ['블리자드', "blizzard"], ['넥슨', "nexon"], ['스팀', "steam"], ['모바일', "mobile"]].each do |c| -%>
             <%= content_tag(:option, c.first, value: c.last) %>
           <% end %>
         <% end %>

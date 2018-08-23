@@ -1,30 +1,47 @@
 <h1><%= @post.id %>번 Post글 입니다.</h1>
 
-<%= render 'form' %>
+<div class="field">
+    <strong>제목</strong>
+    <%= @post.title %>
+</div>
+<div class="field">
+    <strong>내용</strong>
+    <%= @post.content %>
+</div><br>
+<div class="field">
+   
+ <img class="image" src="<%= @post.image %>">
+ <%= image_tag image_url(@post.image) %>
+</div>
+
 
 <!-- 댓글 -->
 <div class="comment">
     <!-- 댓글 입력 -->
     <% if user_signed_in? %>
-        <%= form_tag(comments_path, method: :post) do %>
-            <%= text_area_tag(:comment_body) %>
-            <%= submit_tag("등록") %>
-        <% end %>
+       
+        <form action="/posts/<%=@post.id%>/comments">
+            <input type="textarea" name="comment_body">
+            <input type="submit" value="등록">
+        </form>
     <% end %>
     <!-- 댓글 출력 -->
     <% @post.comments.each do |comment| %>
         <div class="body">
-            <%= comment.body %>
+          <%= comment.body %>
+          <% if current_user.id == comment.user_id %>
+            <%= link_to "삭제", "/posts/#{@post.id}/comments/#{comment.id}"%>
+          <% end %>
         </div>
 
-        <% if current_user.id == comment.user_id %>
-            <%= link_to "삭제", comment_path(@post), method: :delete %>
-        <% end %>
+        
         <hr>
     <% end %> <!--  comment each do-->
 </div> <!-- div-comment -->
 
 <div>
     <%= link_to "홈으로", root_path %>
-    <%= link_to "글 삭제", post_path(@post), method: :delete, data: {confirm: "정말 삭제하시겠습니까?"} %>
+    <% if @post.user_id == current_user.id %>
+        <%= link_to "글 삭제", post_path(@post), method: :delete, data: {confirm: "정말 삭제하시겠습니까?"} %>
+    <% end %>
 </div>
