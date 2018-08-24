@@ -26,6 +26,7 @@
     <!-- 댓글 출력 -->
     <% @post.comments.each do |comment| %>
         <div class="body">
+        <%=comment.user_id
           <%= comment.body %>
           <% if current_user.id == comment.user_id %>
             <%= link_to "삭제", "/posts/#{@post.id}/comments/#{comment.id}"%>
