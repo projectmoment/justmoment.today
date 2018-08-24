@@ -7,7 +7,7 @@
 	position: relative;
 	border-top:10px double rgba(0,0,0,.4);
 	border-bottom:10px double rgba(0,0,0,.4);
-		background: url('../images/bg1.jpg') 0 0 repeat fixed;
+		background: url('/images/separator1.jpg') 0 0 repeat fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;
@@ -27,7 +27,7 @@
 		color:#fff;
 	border-top:10px double rgba(0,0,0,.4);
 	border-bottom:10px double rgba(0,0,0,.4);
-		background: url('../images/bg2.jpg') 0 0 repeat fixed;
+		background: url('/images/separator2.png') 0 0 repeat fixed;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		background-size: cover;

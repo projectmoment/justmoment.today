@@ -1,12 +1,16 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
 
   def index
     #모든 포스트를 보여주는 뷰
 
     @posts = Post.all.reverse
-
-    @user = User.find(current_user.id)
+    
+    if !current_user.nil?
+      @user = User.find(current_user.id)
+    end
+    
+      
     @lols = Post.where(game_type: 0)
     @battlegrounds = Post.where(game_type: 1)
     @blizzards = Post.where(game_type: 2)

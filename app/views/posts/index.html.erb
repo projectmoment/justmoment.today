@@ -17,6 +17,13 @@
 					<ul class="list-social-home">
 
 <!--로그인버튼  -->
+		<% if user_signed_in? %>
+		<div class="">
+		<%=link_to "dasd",destroy_user_session_path,method:"delete" %>
+		<button type="">Logout</button>
+		</div>
+		<!--로그아웃 버튼-->
+		<% else %>
 		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 		<div id="id01" class="modal">
@@ -46,8 +53,11 @@
 		    </div>
 		  </form>
 		</div>
-
+		<% end %>
 <!--  여기까지 로그인버튼-->
+
+
+
 
 						<li class="icon-soc-home"><a href="https://www.facebook.com/Moment-265780637537334/notifications/">&#xf09a;</a></li>
 						<li class="icon-soc-home"><a href="https://www.instagram.com/moment_games/">&#xf09b;</a></li>
@@ -88,13 +98,14 @@
                         </a>
                     </li>
 										<li>
-
+												<%if user_signed_in?%>
 												<a href="/posts/mypage/<%= current_user.id %>" class="">
 														<span class="ca-icon">&#xf007;</span>
 														<div class="ca-content">
 																<h2 class="ca-main">Mypage</h2>
 														</div>
 												</a>
+												<%end%>
 											<!-- <#% else %>
 												<a href="" class="">
 														<span class="ca-icon">&#xf007;</span>
@@ -105,16 +116,15 @@
 											<#% end %> -->
 										</li>
 										<li>
-												<a href="/posts/new" class="">
-														<span class="ca-icon">&#xf030;</span>
-														<div class="ca-content">
-																<h2 class="ca-main">Write</h2>
-														</div>
-												</a>
+											<a href="/posts/new" class="">
+													<span class="ca-icon">&#xf030;</span>
+													<div class="ca-content">
+															<h2 class="ca-main">Write</h2>
+													</div>
+											</a>
 										</li>
-                		</ul>
-
-	</div>
+                	</ul>
+		</div>
 
 
 
