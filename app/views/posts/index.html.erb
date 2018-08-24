@@ -12,6 +12,9 @@
 <h5><%= current_user.name %> 님 환영합니다!</h5>
 
 <h1>게시판 입니다!</h1>
+
+<div><a href="/posts/new">글 작 성 하 기</a></div>
+
 <div class="board">
     <!-- 게시글 작성 -->
     <% @posts.each do |post|%>
@@ -43,7 +46,7 @@
     <!-- 댓글 출력 -->
     <% post.comments.each do |comment| %>
         <div class="body">
-        <%= getNameById(comment.user_id)%> :
+        <%= link_to getNameById(comment.user_id), "/posts/mypage/#{comment.user_id}"%> :
         <%= render_user_tag(comment.body) %>
           <% if current_user.id == comment.user_id %>
             <%= link_to "삭제", "/posts/#{post.id}/comments/#{comment.id}"%>
@@ -58,4 +61,3 @@
     <% end %> <!-- posts each do -->
 </div>
 
-<div><a href="/posts/new">글 작 성 하 기</a></div>
