@@ -1,3 +1,4 @@
+
 	<div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
@@ -14,7 +15,7 @@
 				</div>
 				<div class="center-home fadeIn fadeIn-4s fadeIn-Delay-4s">
 					<ul class="list-social-home">
-						
+
 <!--로그인버튼  -->
 		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
@@ -107,29 +108,7 @@
 	</div>
 
 
-	<nav id="navigation">
-		<a href="#home" class="scroll" ><img class="logo" alt='logo' src='images/slider/moment_logo.png'></a>
-                    <ul   id="menu">
-                        <li class="current">
-                            <a href="#home" class="scroll">Home</a>
-                        </li>
-                        <li>
-                            <a href="#works" class="scroll">Moment</a>
-                        </li>
-                        <li>
-                            <a href="#news" class="scroll">FEED</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="scroll">Developers</a>
-                        </li>
-												<li>
-                            <a href="/posts/mypage/<%= current_user.id %>" class="scroll">Mypage</a>
-                        </li>
-                        <li>
-                            <a href="/posts/new" class="scroll">Write</a>
-                        </li>
-                    </ul>
-	</nav>
+
 
 	<div id="works">
 		<div class="container">
@@ -152,8 +131,8 @@
 
 						<!-- project1 -->
 
-						
 						<% @lols.each do |p| %>
+
 							<li data-pile="Lol">
 								<a href="" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
@@ -161,7 +140,7 @@
 								</a>
 							</li>
 						<% end %>
-						
+
 						<!-- project2 -->
 						<% @battlegrounds.each do |p| %>
 							<li data-pile="Battleground">
@@ -648,10 +627,10 @@
 							</div>
 						</div>
 					</div>
+
 </div>
 </div>
 <!--여기까지 스페셜땡스투 -->
-
 
 
 
@@ -716,4 +695,6 @@
 				<p>&copy; copyright 2018 MO<span>M</span>ENT</p>
 			</div>
 		</div>
+
+
 	</div>
