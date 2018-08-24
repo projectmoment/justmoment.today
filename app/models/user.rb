@@ -5,11 +5,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
   
+  has_many :likes
+  has_many :liked_posts, through: :likes, source: :post
+  
   has_many :posts
   has_many :comments
 
   has_one :tag
-
+  
+  def is_like?(post)
+    Like.find_by(user_id: self.id, post_id: post.id).present?
+  end
+  
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 

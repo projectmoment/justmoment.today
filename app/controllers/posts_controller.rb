@@ -5,7 +5,8 @@ class PostsController < ApplicationController
     #모든 포스트를 보여주는 뷰
 
     @posts = Post.all.reverse
-
+    @post = Post.find(params[:id])
+    
   end
   
   def show
@@ -55,7 +56,23 @@ class PostsController < ApplicationController
  def mypage
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).reverse
-  end
+ end
+ 
+ def editmypage
+   @user = User.find(params[:id])
+   @posts = Post.where(user_id: @user.id).reverse
+ end
+ 
+ def updatemypage
+   @user = User.find(params[:id])
+   @user.introduction = params[:introduction]
+   uploader =ImageUploader.new
+   uploader.store!(params[:image])
+   puts uploader
+   @user.image = uploader.url
+   @user.save
+   redirect_to "/posts/mypage/#{@user.id}"
+ end
   
 
  

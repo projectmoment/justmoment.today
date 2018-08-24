@@ -13,7 +13,7 @@
 
 <h1>게시판 입니다!</h1>
 
-<div><a href="/posts/new">글 작 성 하 기</a></div>
+<div><a href="/posts/new">글작성하기</a></div>
 
 <div class="board">
     <!-- 게시글 작성 -->
@@ -24,7 +24,8 @@
             <span><%= getNameById(post.user_id) %></span><br>
             <div><%= link_to image_tag(post.image), post_path(post), method: :get %></div>
            
-            <span><%= link_to post.title, post_path(post), method: :get %><br><br></span>
+            <div><%= post.title %><br></div>
+            <div><%= post.content %><br></div>
             <% if post.user_id == current_user.id%>
             <span><%= link_to "삭제", post_path(post.id), method: :delete%></span>
             <span>&nbsp;</span>
@@ -32,17 +33,24 @@
             <br><br>
             <% end %>
         </div> <!-- post content -->
-        
+        <!--좋아요-->
+    <div>
+        <% if current_user.is_like?(@post) %>
+            <%= link_to "좋아요 취소", post_like_path(@post), method: "POST" %>
+        <% else %>
+            <%= link_to "좋아요", post_like_path(@post), method: "POST" %>
+        <% end %>
+    </div>
 <!-- 댓글 -->
 <div class="comment">
     <!-- 댓글 입력 -->
     <% if user_signed_in? %>
-       
         <form action="/posts/<%=post.id%>/comments">
             <input type="textarea" name="comment_body">
             <input type="submit" value="등록">
         </form>
     <% end %>
+    
     <!-- 댓글 출력 -->
     <% post.comments.each do |comment| %>
         <div class="body">
@@ -53,7 +61,6 @@
           <% end %>
         </div>
 
-        
         <hr>
     <% end %> <!--  comment each do-->
 </div> <!-- div-comment -->
