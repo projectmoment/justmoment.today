@@ -1,6 +1,4 @@
 
-	<!-- Primary Page Layout
-	================================================== -->
 	<div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
@@ -109,29 +107,7 @@
 	</div>
 
 
-	<nav id="navigation">
-		<a href="#home" class="scroll" ><img class="logo" alt='logo' src='images/slider/moment_logo.png'></a>
-                    <ul   id="menu">
-                        <li class="current">
-                            <a href="#home" class="scroll">Home</a>
-                        </li>
-                        <li>
-                            <a href="#works" class="scroll">Moment</a>
-                        </li>
-                        <li>
-                            <a href="#news" class="scroll">FEED</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="scroll">Developers</a>
-                        </li>
-												<li>
-                            <a href="/posts/mypage/<%= current_user.id %>" class="scroll">Mypage</a>
-                        </li>
-                        <li>
-                            <a href="/posts/new" class="scroll">Write</a>
-                        </li>
-                    </ul>
-	</nav>
+
 
 	<div id="works">
 		<div class="container">
@@ -154,8 +130,8 @@
 
 						<!-- project1 -->
 
-						
-						<% @lols.each do |p| %>
+
+						<% @lol_posts.each do |p| %>
 							<li data-pile="Lol">
 								<a href="work.html" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
@@ -166,7 +142,7 @@
 
 
 						<!-- project2 -->
-						<% @lols.each do |p| %>
+						<% @battleground_posts.each do |p| %>
 							<li data-pile="Battleground">
 								<a href="work.html" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
@@ -177,7 +153,7 @@
 
 
 						<!-- project3 -->
-						<% @lols.each do |p| %>
+						<% @blizzard_posts.each do |p| %>
 							<li data-pile="Battleground">
 								<a href="work.html" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
@@ -927,7 +903,7 @@
 						<li><a href="#" data-filter=".nexon" title="Nexon">nexon</a></li>
                         <li><a href="#" data-filter=".steam" title="Steam">steam</a></li>
                         <li><a href="#" data-filter=".mobile" title="Mobile">mobile</a></li>
-						
+
 					</ul>
 				</div>
 			</div>
