@@ -17,15 +17,42 @@
     <% @posts.each do |post|%>
         <div class="content">
             <span><%= post.id %></span>
-            <span><%= link_to post.title, post_path(post), method: :get%><br><br></span>
+            <span><%= getNameById(post.user_id) %></span><br>
+            <div><%= link_to image_tag(post.image), post_path(post), method: :get %></div>
+           
+            <span><%= link_to post.title, post_path(post), method: :get %><br><br></span>
             <% if post.user_id == current_user.id%>
-            <span><a href="/posts/destroy/<%= post.id %>" data-method="POST">삭제</a></span>
+            <span><%= link_to "삭제", post_path(post.id), method: :delete%></span>
             <span>&nbsp;</span>
-            <span><a href="/posts/edit/<%= post.id %>">수정<br><br></a></span>
+            <span><%= link_to "수정", edit_post_path(post.id), method: :get%></span>
+            <br><br>
             <% end %>
         </div> <!-- post content -->
         
+<!-- 댓글 -->
+<div class="comment">
+    <!-- 댓글 입력 -->
+    <% if user_signed_in? %>
+       
+        <form action="/posts/<%=post.id%>/comments">
+            <input type="textarea" name="comment_body">
+            <input type="submit" value="등록">
+        </form>
+    <% end %>
+    <!-- 댓글 출력 -->
+    <% post.comments.each do |comment| %>
+        <div class="body">
+        <%= getNameById(comment.user_id)%> :
+        <%= render_user_tag(comment.body) %>
+          <% if current_user.id == comment.user_id %>
+            <%= link_to "삭제", "/posts/#{post.id}/comments/#{comment.id}"%>
+          <% end %>
+        </div>
 
+        
+        <hr>
+    <% end %> <!--  comment each do-->
+</div> <!-- div-comment -->
 
     <% end %> <!-- posts each do -->
 </div>

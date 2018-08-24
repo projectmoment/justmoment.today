@@ -1,10 +1,5 @@
 <h1><%= @post.id %>번 수정페이지 입니다</h1>
-<form action="posts/update/<%= @post.id %>" method = "post">
-    <p>제 목</p>
-    <input type="text" name="input_title" placeholder="제목">
-    <p>내 용</p>
-    <input type="text" name="input_content" placeholder="내용">
-    <input type="submit">
-</form>
 
-<a href="/">홈으로</a>
+<%= render partial: "form" %>
+
+<%= link_to "홈으로", root_path %>
