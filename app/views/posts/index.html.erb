@@ -88,12 +88,21 @@
                         </a>
                     </li>
 										<li>
+
 												<a href="/posts/mypage/<%= current_user.id %>" class="">
 														<span class="ca-icon">&#xf007;</span>
 														<div class="ca-content">
 																<h2 class="ca-main">Mypage</h2>
 														</div>
 												</a>
+											<!-- <#% else %>
+												<a href="" class="">
+														<span class="ca-icon">&#xf007;</span>
+														<div class="ca-content">
+																<h2 class="ca-main">Login</h2>
+														</div>
+												</a>
+											<#% end %> -->
 										</li>
 										<li>
 												<a href="/posts/new" class="">
@@ -236,32 +245,32 @@
 							<img src="<%= p.image %>" alt="" />
 							<h2><%= p.title %></h2>
 							<p><%= p.content %></p>
-												<!-- 댓글 -->	
-							<div class="comment">	
-							    <!-- 댓글 입력 -->	
-							    <% if user_signed_in? %>	
-							        <form action="/posts/<%=p.id%>/comments">	
-							            <input type="textarea" name="comment_body">	
-							            <input type="submit" value="등록">	
-							        </form>	
-							    <% end %>	
-							    	
-							    <!-- 댓글 출력 -->	
-							    <% p.comments.each do |comment| %>	
-							        <div class="body">	
-							        <%= link_to getNameById(comment.user_id), "/posts/mypage/#{comment.user_id}"%> :	
-							        <%= render_user_tag(comment.body) %>	
-							          <% if current_user.id == comment.user_id %>	
-							            <%= link_to "삭제", "/posts/#{p.id}/comments/#{comment.id}"%>	
-							          <% end %>	
-							        </div>	
-							         <hr>	
-							    <% end %> <!--  comment each do-->	
+												<!-- 댓글 -->
+							<div class="comment">
+							    <!-- 댓글 입력 -->
+							    <% if user_signed_in? %>
+							        <form action="/posts/<%=p.id%>/comments">
+							            <input type="textarea" name="comment_body">
+							            <input type="submit" value="등록">
+							        </form>
+							    <% end %>
+
+							    <!-- 댓글 출력 -->
+							    <% p.comments.each do |comment| %>
+							        <div class="body">
+							        <%= link_to getNameById(comment.user_id), "/posts/mypage/#{comment.user_id}"%> :
+							        <%= render_user_tag(comment.body) %>
+							          <% if current_user.id == comment.user_id %>
+							            <%= link_to "삭제", "/posts/#{p.id}/comments/#{comment.id}"%>
+							          <% end %>
+							        </div>
+							         <hr>
+							    <% end %> <!--  comment each do-->
 							</div> <!-- div-comment -->
 							<a class="inner-button-news" href="news.html">View More</a>
 						</div>
 					</li>
-					
+
 
 					<% end %>
 				</ul>
