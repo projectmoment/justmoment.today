@@ -1,3 +1,4 @@
+
 	<div id="preloader">
 		<div id="status">&nbsp;</div>
 	</div>
@@ -14,7 +15,7 @@
 				</div>
 				<div class="center-home fadeIn fadeIn-4s fadeIn-Delay-4s">
 					<ul class="list-social-home">
-						
+
 <!--로그인버튼  -->
 		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
@@ -107,29 +108,7 @@
 	</div>
 
 
-	<nav id="navigation">
-		<a href="#home" class="scroll" ><img class="logo" alt='logo' src='images/slider/moment_logo.png'></a>
-                    <ul   id="menu">
-                        <li class="current">
-                            <a href="#home" class="scroll">Home</a>
-                        </li>
-                        <li>
-                            <a href="#works" class="scroll">Moment</a>
-                        </li>
-                        <li>
-                            <a href="#news" class="scroll">FEED</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="scroll">Developers</a>
-                        </li>
-												<li>
-                            <a href="/posts/mypage/<%= current_user.id %>" class="scroll">Mypage</a>
-                        </li>
-                        <li>
-                            <a href="/posts/new" class="scroll">Write</a>
-                        </li>
-                    </ul>
-	</nav>
+
 
 	<div id="works">
 		<div class="container">
@@ -152,8 +131,8 @@
 
 						<!-- project1 -->
 
-						
-						<% @lol_posts.each do |p| %>
+						<% @lols.each do |p| %>
+
 							<li data-pile="Lol">
 								<a href="" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
@@ -161,7 +140,7 @@
 								</a>
 							</li>
 						<% end %>
-						
+
 						<!-- project2 -->
 						<% @battlegrounds.each do |p| %>
 							<li data-pile="Battleground">
@@ -251,15 +230,39 @@
 				<ul class="cbp_tmtimeline">
 					<% @posts.each do |p|%>
 					<li>
-						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>2018/08/11</span> <span>18:30</span></time>
+						<time class="cbp_tmtime" datetime="<%= p.created_at %>"></time>
 						<div class="cbp_tmicon cbp_tmicon-phone"></div>
 						<div class="cbp_tmlabel">
-							<img src="images/slider/slider_logo.png" alt="" />
-							<h2>글제목? 사진?</h2>
-							<p>@번째 유저의 @카테고리 @번째 글</p>
+							<img src="<%= p.image %>" alt="" />
+							<h2><%= p.title %></h2>
+							<p><%= p.content %></p>
+												<!-- 댓글 -->	
+							<div class="comment">	
+							    <!-- 댓글 입력 -->	
+							    <% if user_signed_in? %>	
+							        <form action="/posts/<%=p.id%>/comments">	
+							            <input type="textarea" name="comment_body">	
+							            <input type="submit" value="등록">	
+							        </form>	
+							    <% end %>	
+							    	
+							    <!-- 댓글 출력 -->	
+							    <% p.comments.each do |comment| %>	
+							        <div class="body">	
+							        <%= link_to getNameById(comment.user_id), "/posts/mypage/#{comment.user_id}"%> :	
+							        <%= render_user_tag(comment.body) %>	
+							          <% if current_user.id == comment.user_id %>	
+							            <%= link_to "삭제", "/posts/#{p.id}/comments/#{comment.id}"%>	
+							          <% end %>	
+							        </div>	
+							         <hr>	
+							    <% end %> <!--  comment each do-->	
+							</div> <!-- div-comment -->
 							<a class="inner-button-news" href="news.html">View More</a>
 						</div>
 					</li>
+					
+
 					<% end %>
 				</ul>
 			</div>
@@ -632,7 +635,6 @@
 
 
 
-
 	<div id="">
 		<!-- <div id="map"></div> -->
 		<div class="container">
@@ -694,5 +696,5 @@
 			</div>
 		</div>
 
-	</div>
 
+	</div>
