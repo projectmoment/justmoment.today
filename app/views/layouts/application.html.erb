@@ -49,7 +49,9 @@
                           <a href="#contact" class="scroll">Developers</a>
                       </li>
                       <li>
-                          <a href="/posts/mypage/<%= current_user.id %>" class="scroll">Mypage</a>
+                        <% if user_signed_in? %>
+                          <a href="/posts/mypage/<%= current_user.id %>" class="scroll">Mypage</a>                        
+                        <% end %>
                       </li>
                       <li>
                           <a href="/posts/new" class="scroll">Write</a>

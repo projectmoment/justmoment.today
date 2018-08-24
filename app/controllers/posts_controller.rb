@@ -7,7 +7,6 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse
 
     @user = User.find(current_user.id)
-
     @lols = Post.where(game_type: 0)
     @battlegrounds = Post.where(game_type: 1)
     @blizzards = Post.where(game_type: 2)
@@ -15,12 +14,14 @@ class PostsController < ApplicationController
     @steams = Post.where(game_type: 4)
     @mobiles = Post.where(game_type: 5)
 
-
   end
 
   def show
     #한개의 포스트를 보여주는 뷰
     @post = Post.find(params[:id])
+
+    @user = User.find(@post.user_id)
+
   end
 
   def new
