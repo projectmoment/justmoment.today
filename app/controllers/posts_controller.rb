@@ -7,13 +7,16 @@ class PostsController < ApplicationController
     @posts = Post.all.reverse
     @user = User.find(current_user.id)
     
-    @lol_posts          = Post.where(user_id: current_user.id , game_type: 0 )
-    @battleground_posts = Post.where(user_id: current_user.id , game_type: 1 )
-    @blizzard_posts     = Post.where(user_id: current_user.id , game_type: 2 )
-    @nexon_posts        = Post.where(user_id: current_user.id , game_type: 3 )
-    @steam_posts        = Post.where(user_id: current_user.id , game_type: 4 )
-    @mobile_posts       = Post.where(user_id: current_user.id , game_type: 5 )
-    @ext_posts          = Post.where(user_id: params[:id] , game_type: 6 )
+
+    
+    @lols = Post.where(game_type: 0)
+    @battlegrounds = Post.where(game_type: 1)
+    @blizzards = Post.where(game_type: 2)
+    @nexons = Post.where(game_type: 3)
+    @steams = Post.where(game_type: 4)
+    @mobiles = Post.where(game_type: 5)
+
+
   end
   
   def show
