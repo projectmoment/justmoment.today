@@ -5,17 +5,9 @@ class PostsController < ApplicationController
     #모든 포스트를 보여주는 뷰
 
     @posts = Post.all.reverse
-<<<<<<< HEAD
-   
-    
-=======
+
     @user = User.find(current_user.id)
-    @lol_posts = Post.where(user_id: current_user.id , game_type: 0 )
-    @battleground_posts = Post.where(user_id: current_user.id , game_type: 1 )
-    @blizzard_posts = Post.where(user_id: current_user.id , game_type: 2 )
-    @nexon_posts = Post.where(user_id: current_user.id , game_type: 3 )
-    @steam_posts = Post.where(user_id: current_user.id , game_type: 4 )
-    @mobile_posts = Post.where(user_id: current_user.id , game_type: 5 )
+
     
     @lols = Post.where(game_type: 0)
     @battlegrounds = Post.where(game_type: 1)
@@ -24,7 +16,7 @@ class PostsController < ApplicationController
     @steams = Post.where(game_type: 4)
     @mobiles = Post.where(game_type: 5)
 
->>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
+
   end
   
   def show
@@ -74,7 +66,13 @@ class PostsController < ApplicationController
  def mypage
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).reverse
-<<<<<<< HEAD
+    @lol_posts = Post.where(user_id: params[:id] , game_type: 0 )
+    @battleground_posts = Post.where(user_id: params[:id] , game_type: 1 )
+    @blizzard_posts = Post.where(user_id: params[:id] , game_type: 2 )
+    @nexon_posts = Post.where(user_id: params[:id] , game_type: 3 )
+    @steam_posts = Post.where(user_id: params[:id] , game_type: 4 )
+    @mobile_posts = Post.where(user_id: params[:id] , game_type: 5 )
+
  end
  
  def editmypage
@@ -91,8 +89,7 @@ class PostsController < ApplicationController
    @user.image = uploader.url
    @user.save
    redirect_to "/posts/mypage/#{@user.id}"
- end
-=======
+
     @lol_posts = Post.where(user_id: params[:id] , game_type: 0 )
     @battleground_posts = Post.where(user_id: params[:id] , game_type: 1 )
     @blizzard_posts = Post.where(user_id: params[:id] , game_type: 2 )
@@ -101,7 +98,6 @@ class PostsController < ApplicationController
     @mobile_posts = Post.where(user_id: params[:id] , game_type: 5 )
     
   end
->>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
   
 
  
