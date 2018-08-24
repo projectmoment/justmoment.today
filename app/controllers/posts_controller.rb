@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     #모든 포스트를 보여주는 뷰
 
     @posts = Post.all.reverse
-    @post = Post.find(params[:id])
+   
     
   end
   

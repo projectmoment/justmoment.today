@@ -7,7 +7,7 @@ Rails.application.routes.draw do
  get "posts/editmypage/:id"   => "posts#editmypage"
  post "posts/updatemypage/:id" => "posts#updatemypage"
   resources :posts do
-      post "/like", to: "like#like_toggle"
+      post "/like", to: "likes#like_toggle"
   end
   #resources :comments, only: [:create, :destroy]
   
