@@ -5,14 +5,9 @@ class PostsController < ApplicationController
     #모든 포스트를 보여주는 뷰
 
     @posts = Post.all.reverse
-<<<<<<< HEAD
 
     @user = User.find(current_user.id)
 
-    
-=======
-    @user = User.find(current_user.id)
->>>>>>> e78455f46f15b4a019838d9945ef1ff583b7dd64
     @lols = Post.where(game_type: 0)
     @battlegrounds = Post.where(game_type: 1)
     @blizzards = Post.where(game_type: 2)
@@ -20,10 +15,7 @@ class PostsController < ApplicationController
     @steams = Post.where(game_type: 4)
     @mobiles = Post.where(game_type: 5)
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e78455f46f15b4a019838d9945ef1ff583b7dd64
   end
 
   def show
