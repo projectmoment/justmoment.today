@@ -3,12 +3,13 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => { omniauth_callbacks: 'user/omniauth_callbacks' }
  
- get "posts/mypage/:id" => "posts#mypage"
+ get "/posts/mypage/:id" => "posts#mypage"
   resources :posts
   #resources :comments, only: [:create, :destroy]
   
   get '/posts/:post_id/comments'     => 'comments#create'
   get '/posts/:post_id/comments/:id' => 'comments#destroy'
+  
   
 
 end

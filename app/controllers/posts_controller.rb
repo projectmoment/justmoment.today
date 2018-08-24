@@ -5,6 +5,13 @@ class PostsController < ApplicationController
     #모든 포스트를 보여주는 뷰
 
     @posts = Post.all.reverse
+    @user = User.find(current_user.id)
+    @lol_posts = Post.where(user_id: current_user.id , game_type: 0 )
+    @battleground_posts = Post.where(user_id: current_user.id , game_type: 1 )
+    @blizzard_posts = Post.where(user_id: current_user.id , game_type: 2 )
+    @nexon_posts = Post.where(user_id: current_user.id , game_type: 3 )
+    @steam_posts = Post.where(user_id: current_user.id , game_type: 4 )
+    @mobile_posts = Post.where(user_id: current_user.id , game_type: 5 )
 
   end
   
@@ -55,6 +62,13 @@ class PostsController < ApplicationController
  def mypage
     @user = User.find(params[:id])
     @posts = Post.where(user_id: @user.id).reverse
+    @lol_posts = Post.where(user_id: params[:id] , game_type: 0 )
+    @battleground_posts = Post.where(user_id: params[:id] , game_type: 1 )
+    @blizzard_posts = Post.where(user_id: params[:id] , game_type: 2 )
+    @nexon_posts = Post.where(user_id: params[:id] , game_type: 3 )
+    @steam_posts = Post.where(user_id: params[:id] , game_type: 4 )
+    @mobile_posts = Post.where(user_id: params[:id] , game_type: 5 )
+    
   end
   
 
