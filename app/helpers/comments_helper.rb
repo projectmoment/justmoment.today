@@ -1,7 +1,10 @@
 module CommentsHelper
-  def getNameById(comment_user_id)
-    comment = Comment.find_by(user_id: comment_user_id)
-    name = User.find(comment.user_id).name
+  def getNameById(user_id)
+    name = User.find(user_id).name
+    if name.nil?
+      return nil
+    end
+    
     return name
   end
   
@@ -30,7 +33,7 @@ module CommentsHelper
 
         # @이름으로 링크를 달아서 출력
         h content.gsub(/@[^0-9 ]*/){|word|
-            link_to word.delete('@'), "/profile/mypage/#{getIdByName(word)}", class: "ui blue basic button"}.html_safe  
+            link_to word.delete('@'), "/posts/mypage/#{getIdByName(word)}", class: "ui blue basic button"}.html_safe  
     end
   end
 end

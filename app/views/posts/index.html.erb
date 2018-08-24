@@ -1,6 +1,6 @@
 <h1>
     <% if user_signed_in? %>
-         <%= link_to 'My page', posts_mypage_path, method: :get %>
+         <%= link_to 'My page', "/posts/mypage/#{current_user.id}", method: :get %>
         <%= link_to 'logOut', destroy_user_session_path, method: :delete %>
     <% else %>
         <%= link_to 'logIn', new_user_session_path, method: :get %>
@@ -9,7 +9,7 @@
     <% end %>
 </h1>
 
-<h5><%= current_user.email %></h5>
+<h5><%= current_user.name %> 님 환영합니다!</h5>
 
 <h1>게시판 입니다!</h1>
 <div class="board">
