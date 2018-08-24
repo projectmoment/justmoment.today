@@ -3,7 +3,9 @@ class PostsController < ApplicationController
   
   def index
     #모든 포스트를 보여주는 뷰
-    @posts = Post.all
+
+    @posts = Post.all.reverse
+
   end
   
   def show
