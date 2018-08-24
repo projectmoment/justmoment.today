@@ -1,3 +1,52 @@
+<<<<<<< HEAD
+<h1>
+    <% if user_signed_in? %>
+        <%= link_to 'logOut', destroy_user_session_path, method: :delete %>
+        <%= link_to 'sign_up', new_user_registration_path, method: :get %>
+    <% else %>
+         <%= link_to 'logIn', new_user_session_path, method: :get %>
+    <% end %>
+</h1>
+<div>
+    <% if @user.image.present? %>
+        <%= image_tag(@user.image) %>
+    <% else %>
+        <%= image_tag("/person.png")%> 
+    <% end %>
+</div>
+<h5><%= @user.name %>의 마이페이지 입니다.</h5>
+
+<% if current_user == @user %>
+    <h5><%= link_to '프로필 수정', "/posts/editmypage/#{@user.id}" %>
+<% end %>
+
+<h5><%= @user.email %></h5>
+
+<h3>작성한 글 by <%= @user.name %> </h3>
+<div class="board">
+    <!-- 게시글 show -->
+    <% @posts.each do |post|%>
+    
+        <div class="content">
+            
+            <span><%= post.id %></span>
+            <span><%= link_to post.title, post_path(post), method: :get%></span><br>
+            <span><%= link_to image_tag(post.image), post_path(post), method: :get%></span>
+            
+            <% if post.user_id == current_user.id%>
+            <span><a href="/posts/destroy/<%= post.id %>" data-method="POST">삭제</a></span>
+            <span>&nbsp;</span>
+            <span><a href="/posts/edit/<%= post.id %>">수정<br><br></a></span>
+            <% end %>
+        </div> <!-- post content -->
+        
+
+
+    <% end %> <!-- posts each do -->
+</div>
+
+<a href="/">홈으로</a>
+=======
 
 
 <!--<!DOCTYPE html>-->
@@ -201,3 +250,4 @@
 
 <!--</body>-->
 <!--</html>-->
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
