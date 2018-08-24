@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180823152210) do
+ActiveRecord::Schema.define(version: 20180824110555) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
@@ -31,12 +31,27 @@ ActiveRecord::Schema.define(version: 20180823152210) do
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id"
 
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.string   "image"
     t.integer  "game_type"
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "body"
+    t.integer  "user_id"
+    t.integer  "comment_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

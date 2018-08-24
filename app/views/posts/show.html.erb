@@ -7,7 +7,12 @@
 <div class="field">
     <strong>내용</strong>
     <%= @post.content %>
-</div><br>
+</div>
+<div class="field">
+    <strong>작성자</strong>
+    <%= getNameById(@post.user_id)%>
+</div>
+<br>
 
     <img class="image" src="<%= @post.image %>">
 
@@ -27,7 +32,7 @@
     <% @post.comments.each do |comment| %>
         <div class="body">
 
-        <%= getNameById(comment.user_id)%> :
+        <%= link_to getNameById(comment.user_id), "/posts/mypage/#{comment.user_id}"%> :
         <%= render_user_tag(comment.body) %>
 
           <% if current_user.id == comment.user_id %>
