@@ -36,4 +36,5 @@ module CommentsHelper
             link_to word.delete('@'), "/posts/mypage/#{getIdByName(word)}", class: "ui blue basic button"}.html_safe  
     end
   end
+
 end
