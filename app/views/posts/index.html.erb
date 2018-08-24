@@ -17,6 +17,7 @@
     <% @posts.each do |post|%>
         <div class="content">
             <span><%= post.id %></span>
+
             <span><%= getNameById(post.user_id) %></span><br>
             <div><%= link_to image_tag(post.image), post_path(post), method: :get %></div>
            

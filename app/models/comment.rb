@@ -1,6 +1,7 @@
 class Comment < ActiveRecord::Base
     belongs_to :user
     belongs_to :post
+
     has_many :tags
     
   after_create do
@@ -23,5 +24,5 @@ class Comment < ActiveRecord::Base
       end
     end
   end
-  
+
 end

@@ -1,4 +1,5 @@
 module CommentsHelper
+
   def getNameById(comment_user_id)
     comment = Comment.find_by(user_id: comment_user_id)
     name = User.find(comment.user_id).name
@@ -33,4 +34,5 @@ module CommentsHelper
             link_to word.delete('@'), "/profile/mypage/#{getIdByName(word)}", class: "ui blue basic button"}.html_safe  
     end
   end
+
 end

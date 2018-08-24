@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   
   has_many :posts
   has_many :comments
+
   has_one :tag
+
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
