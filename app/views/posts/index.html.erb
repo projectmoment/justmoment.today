@@ -17,6 +17,7 @@
 				</div>
 				<div class="center-home fadeIn fadeIn-4s fadeIn-Delay-4s">
 					<ul class="list-social-home">
+						
 <!--로그인버튼  -->
 		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
@@ -157,18 +158,17 @@
 						
 						<% @lols.each do |p| %>
 							<li data-pile="Lol">
-								<a href="work.html" title="">
+								<a href="" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
 									<img src="<%= p.image%>" alt=""  />
 								</a>
 							</li>
 						<% end %>
-
-
+						
 						<!-- project2 -->
-						<% @lols.each do |p| %>
+						<% @battlegrounds.each do |p| %>
 							<li data-pile="Battleground">
-								<a href="work.html" title="">
+								<a href="" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
 									<img src="<%= p.image%>" alt=""  />
 								</a>
@@ -177,9 +177,9 @@
 
 
 						<!-- project3 -->
-						<% @lols.each do |p| %>
-							<li data-pile="Battleground">
-								<a href="work.html" title="">
+						<% @blizzards.each do |p| %>
+							<li data-pile="Blizzard">
+								<a href="" title="">
 									<span class="tp-info"><span><%= p.title%></span></span>
 									<img src="<%= p.image%>" alt=""  />
 								</a>
@@ -187,142 +187,34 @@
 						<% end %>
 
 						<!-- project4 -->
-						<li data-pile="Interaction Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/4/1.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Interaction Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/4/2.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Interaction Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/4/3.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Interaction Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/4/4.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Interaction Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/4/5.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Interaction Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/4/6.jpg" alt=""  />
-							</a>
-						</li>
+						<% @nexons.each do |p| %>
+							<li data-pile="Nexon">
+								<a href="" title="">
+									<span class="tp-info"><span><%= p.title%></span></span>
+									<img src="<%= p.image%>" alt=""  />
+								</a>
+							</li>
+						<% end %>
 
 						<!-- project5 -->
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/5/1.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/5/2.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/5/3.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/5/4.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/5/5.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/5/6.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/5/7.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/5/8.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Illustration">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/5/9.jpg"  alt="" />
-							</a>
-						</li>
+						<% @steams.each do |p| %>
+							<li data-pile="Steam">
+								<a href= "" title="">
+									<span class="tp-info"><span><%= p.title%></span></span>
+									<img src="<%= p.image%>" alt=""  />
+								</a>
+							</li>
+						<% end %>
 
 						<!-- project6 -->
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/6/1.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/6/2.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/6/3.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/6/4.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Grady Wilson</span></span>
-								<img src="images/6/5.jpg" alt=""  />
-							</a>
-						</li>
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>More Cowbell</span></span>
-								<img src="images/6/6.jpg"  alt="" />
-							</a>
-						</li>
-						<li data-pile="Web Design">
-							<a href="work.html" title="">
-								<span class="tp-info"><span>Growth in 2013</span></span>
-								<img src="images/6/7.jpg"  alt="" />
-							</a>
-						</li>
+						<% @mobiles.each do |p| %>
+							<li data-pile="Mobile">
+								<a href="" title="">
+									<span class="tp-info"><span><%= p.title%></span></span>
+									<img src="<%= p.image%>" alt=""  />
+								</a>
+							</li>
+						<% end %>
 					</ul>
 				</div>
 		</div>
@@ -904,144 +796,10 @@
 </div>
 </div>
 <!--여기까지 스페셜땡스투 -->
-<!--dkdkdk-->
 
 
-	<div id="gallery">
-		<div class="container">
-			<div class="sixteen columns">
-				<h1><span>Mypage</span></h1>
-			</div>
-			<div class="sixteen columns">
-				<h5><%= @user.name %></h5>
-			</div>
-		</div>
-	<div class="fil">
-		<div class="container">
-			<div class="sixteen columns">
-				<div id="portfolio-filter">
-					<ul id="filter">
-						<li><a href="#" data-filter=".lol" title="League Of Legend">lol</a></li>
-						<li><a href="#" data-filter=".battleground" title="Battle Ground">battleground</a></li>
-						<li><a href="#" data-filter=".blizzard" title="Blizzard">blizzard</a></li>
-						<li><a href="#" data-filter=".nexon" title="Nexon">nexon</a></li>
-                        <li><a href="#" data-filter=".steam" title="Steam">steam</a></li>
-                        <li><a href="#" data-filter=".mobile" title="Mobile">mobile</a></li>
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-		<div class="container">
-	<div class="portfolio">
-			<div class="one-third column photography">
-				<div class="project1">
-					<a class="fancybox-media" href="http://www.youtube.com/watch?v=opj24KnzrWo">
-						<div class="pro-image1">
-							<img src="images/gallery/1.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column illustration">
-				<div class="project1">
-					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/2t.jpg" title="Project Title">
-						<div class="pro-image1">
-							<img src="images/gallery/2.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column photography">
-				<div class="project1">
-					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/3t.jpg" title="Project Title">
-						<div class="pro-image1">
-							<img src="images/gallery/3.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column web-design">
-				<div class="project1">
-					<a class="fancybox-media" href="http://www.metacafe.com/watch/7635964/">
-						<div class="pro-image1">
-							<img src="images/gallery/4.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column motion-graphics">
-				<div class="project1">
-					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/5t.jpg" title="Project Title">
-						<div class="pro-image1">
-							<img src="images/gallery/5.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column web-design">
-				<div class="project1">
-					<a class="fancybox-media" href="http://www.dailymotion.com/video/xoeylt_electric-guest-this-head-i-hold_music">
-						<div class="pro-image1">
-							<img src="images/gallery/6.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column motion-graphics">
-				<div class="project1">
-					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/7t.jpg" title="Project Title">
-						<div class="pro-image1">
-							<img src="images/gallery/7.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column illustration">
-				<div class="project1">
-					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/8t.jpg" title="Project Title">
-						<div class="pro-image1">
-							<img src="images/gallery/8.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-			<div class="one-third column motion-graphics">
-				<div class="project1">
-					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/9t.jpg" title="Project Title">
-						<div class="pro-image1">
-							<img src="images/gallery/9.jpg" alt="" />
-							<div class="mask-w1"></div>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
 
 
-	<div id="separator3">
-		<div class="container">
-			<div class="sixteen columns">
-				<h5>Description about recent <span>news</span>.</h5>
-			</div>
-		</div>
-	</div>
-
-
-<!--여기까지dkdkdk-->
-
-<!--여기까지TEST  -->
 
 	<div id="">
 		<!-- <div id="map"></div> -->

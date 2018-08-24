@@ -12,6 +12,13 @@ class PostsController < ApplicationController
     @nexon_posts = Post.where(user_id: current_user.id , game_type: 3 )
     @steam_posts = Post.where(user_id: current_user.id , game_type: 4 )
     @mobile_posts = Post.where(user_id: current_user.id , game_type: 5 )
+    
+    @lols = Post.where(game_type: 0)
+    @battlegrounds = Post.where(game_type: 1)
+    @blizzards = Post.where(game_type: 2)
+    @nexons = Post.where(game_type: 3)
+    @steams = Post.where(game_type: 4)
+    @mobiles = Post.where(game_type: 5)
 
   end
   
