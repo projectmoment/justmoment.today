@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>
     <% if user_signed_in? %>
          <%= link_to 'My page', "/posts/mypage/#{current_user.id}", method: :get %>
@@ -66,5 +67,1114 @@
 </div> <!-- div-comment -->
 
     <% end %> <!-- posts each do -->
-</div>
+=======
 
+	<!-- Primary Page Layout
+	================================================== -->
+	<div id="preloader">
+		<div id="status">&nbsp;</div>
+	</div>
+
+
+	<div id="home">
+		<div class="backgr"></div>
+		<div class="text-home words">M O M E N T</div>
+				<div id="rotator" class="fadeIn fadeIn-4s fadeIn-Delay-4s">
+						 <div><p>안녕하세요.</p></div>
+						 <div><p>우리는 모먼트입니다.</p></div>
+						 <div><p>당신을 환영합니다.</p></div>
+						 <div><p>지금 시작하세요.</p></div>
+				</div>
+				<div class="center-home fadeIn fadeIn-4s fadeIn-Delay-4s">
+					<ul class="list-social-home">
+<!--로그인버튼  -->
+		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+		<div id="id01" class="modal">
+
+		  <form class="modal-content animate" action="/action_page.php">
+		    <div class="imgcontainer">
+		      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+		      <img src="images/slider/m_logo_copy.png" alt="Avatar" class="avatar">
+		    </div>
+
+		    <div class="container">
+		      <label for="uname"><b>Username</b></label>
+		      <input type="text" placeholder="Enter Username" name="uname" required>
+
+		      <label for="psw"><b>Password</b></label>
+		      <input type="password" placeholder="Enter Password" name="psw" required>
+
+		      <button type="submit">Login</button>
+		      <label>
+		        <input type="checkbox" checked="checked" name="remember"> Remember me
+		      </label>
+		    </div>
+
+		    <div class="container" style="background-color:#f1f1f1">
+		      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+		      <span class="psw">Forgot <a href="#">password?</a></span>
+		    </div>
+		  </form>
+		</div>
+
+<!--  여기까지 로그인버튼-->
+
+						<li class="icon-soc-home"><a href="https://www.facebook.com/Moment-265780637537334/notifications/">&#xf09a;</a></li>
+						<li class="icon-soc-home"><a href="https://www.instagram.com/moment_games/">&#xf09b;</a></li>
+						<!--<li class="icon-soc-home"><a href="">&#xf0d5;</a></li>-->
+					</ul>
+				</div>
+		<a href="" id="arrow_left"><img src="images/arrow_left.png" alt="Slide Left" /></a>
+		<a href="" id="arrow_right"><img src="images/arrow_right.png" alt="Slide Right" /></a>
+
+		<div id="maximage">
+			<img src="images/slider/blue_1.png" alt=""/>
+			<img src="images/slider/slider_logo.png" alt="" height="100"/>
+			<img src="images/slider/game.jpg" alt=""/>
+		</div>
+                <ul class="ca-menu">
+                    <li>
+                        <a href="#works" class="scroll">
+                            <span class="ca-icon">&#xf108;</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">MOMENT</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#news" class="scroll">
+                            <span class="ca-icon">&#xf040;</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">FEED</h2>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="scroll">
+                            <span class="ca-icon">&#xf086;</span>
+                            <div class="ca-content">
+                                <h2 class="ca-main">Developers</h2>
+                            </div>
+                        </a>
+                    </li>
+										<li>
+												<a href="/posts/mypage/<%= current_user.id %>" class="">
+														<span class="ca-icon">&#xf007;</span>
+														<div class="ca-content">
+																<h2 class="ca-main">Mypage</h2>
+														</div>
+												</a>
+										</li>
+										<li>
+												<a href="/posts/new" class="">
+														<span class="ca-icon">&#xf030;</span>
+														<div class="ca-content">
+																<h2 class="ca-main">Write</h2>
+														</div>
+												</a>
+										</li>
+                		</ul>
+
+	</div>
+
+
+	<nav id="navigation">
+		<a href="#home" class="scroll" ><img class="logo" alt='logo' src='images/slider/moment_logo.png'></a>
+                    <ul   id="menu">
+                        <li class="current">
+                            <a href="#home" class="scroll">Home</a>
+                        </li>
+                        <li>
+                            <a href="#works" class="scroll">Moment</a>
+                        </li>
+                        <li>
+                            <a href="#news" class="scroll">FEED</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="scroll">Developers</a>
+                        </li>
+												<li>
+                            <a href="/posts/mypage/<%= current_user.id %>" class="scroll">Mypage</a>
+                        </li>
+                        <li>
+                            <a href="/posts/new" class="scroll">Write</a>
+                        </li>
+                    </ul>
+	</nav>
+
+	<div id="works">
+		<div class="container">
+			<div class="sixteen columns">
+				<h1><span>AWESOME MOMENT</span></h1>
+			</div>
+			<div class="sixteen columns">
+				<h5>MOMENT는 게임 속 순간을 기억하기 위한 서비스입니다.</h5>
+				<!-- <a href="#">Behance</a> & <a href="#">Dribbble</a> -->
+			</div>
+		</div>
+		<div id="wrap">
+				<div class="wrapper">
+
+					<div class="topbar">
+						<span id="close" class="back">&larr;</span>
+					</div>
+
+					<ul id="tp-grid" class="tp-grid">
+
+						<!-- project1 -->
+
+						
+						<% @lols.each do |p| %>
+							<li data-pile="Lol">
+								<a href="work.html" title="">
+									<span class="tp-info"><span><%= p.title%></span></span>
+									<img src="<%= p.image%>" alt=""  />
+								</a>
+							</li>
+						<% end %>
+
+
+						<!-- project2 -->
+						<% @lols.each do |p| %>
+							<li data-pile="Battleground">
+								<a href="work.html" title="">
+									<span class="tp-info"><span><%= p.title%></span></span>
+									<img src="<%= p.image%>" alt=""  />
+								</a>
+							</li>
+						<% end %>
+
+
+						<!-- project3 -->
+						<% @lols.each do |p| %>
+							<li data-pile="Battleground">
+								<a href="work.html" title="">
+									<span class="tp-info"><span><%= p.title%></span></span>
+									<img src="<%= p.image%>" alt=""  />
+								</a>
+							</li>
+						<% end %>
+
+						<!-- project4 -->
+						<li data-pile="Interaction Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/4/1.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Interaction Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/4/2.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Interaction Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/4/3.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Interaction Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/4/4.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Interaction Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/4/5.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Interaction Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/4/6.jpg" alt=""  />
+							</a>
+						</li>
+
+						<!-- project5 -->
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/5/1.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/5/2.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/5/3.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/5/4.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/5/5.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/5/6.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/5/7.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/5/8.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Illustration">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/5/9.jpg"  alt="" />
+							</a>
+						</li>
+
+						<!-- project6 -->
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/6/1.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/6/2.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/6/3.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/6/4.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Grady Wilson</span></span>
+								<img src="images/6/5.jpg" alt=""  />
+							</a>
+						</li>
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>More Cowbell</span></span>
+								<img src="images/6/6.jpg"  alt="" />
+							</a>
+						</li>
+						<li data-pile="Web Design">
+							<a href="work.html" title="">
+								<span class="tp-info"><span>Growth in 2013</span></span>
+								<img src="images/6/7.jpg"  alt="" />
+							</a>
+						</li>
+					</ul>
+				</div>
+		</div>
+	</div>
+
+	<div id="separator">
+		<div class="container">
+			<div class="sixteen columns">
+				<h5>최고의 플레이, 레벨업을 했을 때, 보스를 잡았을 때!<br> <span>이런 순간을</span> 우리는 <span>간직하고 싶잖아요!</span>.</h5>
+			</div>
+		</div>
+	</div>
+<!-- id=profile 있던 자리 -->
+
+
+<!--여기까지 스페셜땡스투 -->
+
+
+		<div class="clear"></div>
+		</div>
+
+
+	<div id="separator2">
+		<div class="container">
+			<div class="sixteen columns">
+				<h5>We bring a personal and effective <span>approach</span> to every <span>project</span> we work on.</h5>
+			</div>
+		</div>
+	</div>
+
+
+<!-- 여기부터 갤러리 -->
+	<!-- <div id="gallery">
+		<div class="container">
+			<div class="sixteen columns">
+				<h1><span>Gallery</span></h1>
+			</div>
+			<div class="sixteen columns">
+				<h5>We bring a personal and effective approach to every project we work on.</h5>
+			</div>
+		</div>
+	<div class="fil">
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="portfolio-filter">
+					<ul id="filter">
+						<li><a href="#" class="current" data-filter="*" title="Show all items">Show all</a></li>
+						<li><a href="#" data-filter=".photography" title="Show all items under Photography">photography</a></li>
+						<li><a href="#" data-filter=".illustration" title="Show all items under Illustration">illustration</a></li>
+						<li><a href="#" data-filter=".motion-graphics" title="Show all items under Motion Graphics">motion graphics</a></li>
+						<li><a href="#" data-filter=".web-design" title="Show all items under Web Design">web design</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="container">
+	<div class="portfolio">
+			<div class="one-third column photography">
+				<div class="project1">
+					<a class="fancybox-media" href="http://www.youtube.com/watch?v=opj24KnzrWo">
+						<div class="pro-image1">
+							<img src="images/gallery/1.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column illustration">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/2t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/2.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column photography">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/3t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/3.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column web-design">
+				<div class="project1">
+					<a class="fancybox-media" href="http://www.metacafe.com/watch/7635964/">
+						<div class="pro-image1">
+							<img src="images/gallery/4.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column motion-graphics">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/5t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/5.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column web-design">
+				<div class="project1">
+					<a class="fancybox-media" href="http://www.dailymotion.com/video/xoeylt_electric-guest-this-head-i-hold_music">
+						<div class="pro-image1">
+							<img src="images/gallery/6.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column motion-graphics">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/7t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/7.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column illustration">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/8t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/8.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column motion-graphics">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/9t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/9.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div> -->
+<!-- 여기까지 갤러리-->
+
+	<!-- <div id="separator3">
+		<div class="container">
+			<div class="sixteen columns">
+				<h5>Description about recent <span>FEED</span>.</h5>
+			</div>
+		</div>
+	</div> -->
+
+
+<!-- 뉴스=피드 -->
+	<div id="news">
+		<div class="container">
+			<div class="sixteen columns">
+				<h1><span>FEED</span></h1>
+			</div>
+			<div class="sixteen columns">
+				<h5>Recent Posts.</h5>
+			</div>
+		</div>
+			<div class="main">
+				<ul class="cbp_tmtimeline">
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>2018/08/11</span> <span>18:30</span></time>
+						<div class="cbp_tmicon cbp_tmicon-phone"></div>
+						<div class="cbp_tmlabel">
+							<img src="images/slider/slider_logo.png" alt="" />
+							<h2>글제목? 사진?</h2>
+							<p>@번째 유저의 @카테고리 @번째 글</p>
+							<a class="inner-button-news" href="news.html">View More</a>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-11T12:04"><span>2018/08/12</span> <span>12:04</span></time>
+						<div class="cbp_tmicon cbp_tmicon-screen"></div>
+						<div class="cbp_tmlabel">
+							<img src="images/news/2.jpg" alt="" />
+							<h2>Greens radish arugula</h2>
+							<p>Caulie dandelion maize lentil collard greens radish arugula sweet pepper water spinach kombu courgette lettuce. Celery coriander bitterleaf epazote radicchio shallot winter purslane collard greens spring onion squash lentil. Artichoke salad bamboo shoot black-eyed pea brussels sprout garlic kohlrabi.</p>
+							<a class="inner-button-news1" href="news.html">View More</a>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-13 05:36"><span>2018/08/20</span> <span>05:36</span></time>
+						<div class="cbp_tmicon cbp_tmicon-mail"></div>
+						<div class="cbp_tmlabel">
+							<img src="images/news/3.jpg" alt="" />
+							<h2>Sprout garlic kohlrabi</h2>
+							<p>Parsnip lotus root celery yarrow seakale tomato collard greens tigernut epazote ricebean melon tomatillo soybean chicory broccoli beet greens peanut salad. Lotus root burdock bell pepper chickweed shallot groundnut pea sprouts welsh onion wattle seed pea salsify turnip scallion peanut arugula bamboo shoot onion swiss chard.</p>
+							<a class="inner-button-news" href="news.html">View More</a>
+						</div>
+					</li>
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-15 13:15"><span>2018/08/22</span> <span>13:15</span></time>
+						<div class="cbp_tmicon cbp_tmicon-phone"></div>
+						<div class="cbp_tmlabel">
+							<img src="images/news/4.jpg" alt="" />
+							<h2>Watercress ricebean</h2>
+							<p>Peanut gourd nori welsh onion rock melon mustard jicama. Desert raisin amaranth kombu aubergine kale seakale brussels sprout pea. Black-eyed pea celtuce bamboo shoot salad kohlrabi leek squash prairie turnip catsear rock melon chard taro broccoli turnip greens. Fennel quandong potato watercress ricebean swiss chard garbanzo.</p>
+							<a class="inner-button-news1" href="news.html">View More</a>
+						</div>
+					</li>
+				</ul>
+			</div>
+	</div>
+
+
+
+	<div id="separator1">
+		<div class="container">
+			<div class="sixteen columns">
+				<h5>Ready to get started? <span>Great</span>, so are we.</h5>
+			</div>
+		</div>
+	</div>
+<!-- TEST -->
+<!-- id=profile, developers -->
+	<div id="contact">
+		<div class="container">
+			<div class="sixteen columns">
+				<h1><span>DEVELOPERS</span></h1>
+			</div>
+			<div class="sixteen columns">
+				<h5>We design and build websites!</h5>
+			</div>
+			<div class="clear"></div>
+			<div class="four columns">
+				<div id="team1">
+					<div class="profile container1">
+						<div class="card">
+							<div class="face front">
+								<img src="images/YSY.png" alt="" />
+							</div>
+							<div class="face back1">
+								<h6>SONGYI</h6>
+								<p><em>Design/충무로핵인싸</em></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<ul class="list-social-team">
+						<li class="icon-soc-team"><a href="#">&#xf09a;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf09b;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf0d5;</a></li>
+
+					</ul>
+				</div>
+								<div id="team11">
+									<div class="pro-bar">
+										<div class="caption">
+											<div>버섯</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 83%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>게임</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 98%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>음주</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 77%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>귀여운 게 최고야!</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 100%"></span>
+										</div>
+									</div>
+								</div>
+			</div>
+			<div class="four columns">
+				<div id="team2">
+					<div class="profile container1">
+						<div class="card">
+							<div class="face front">
+								<img src="images/SSM.png" alt="" />
+							</div>
+							<div class="face back1">
+								<h6>SUMIN</h6>
+								<p><em>Design/송사장님</em></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<ul class="list-social-team">
+						<li class="icon-soc-team"><a href="#">&#xf09a;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf09b;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf0d5;</a></li>
+					</ul>
+				</div>
+								<div id="team22">
+									<div class="pro-bar">
+										<div class="caption">
+											<div>연애중</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 83%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>귀여움</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 98%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>키</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 10%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>건강챙김</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 66%"></span>
+										</div>
+									</div>
+								</div>
+			</div>
+			<div class="four columns">
+				<div id="team3">
+					<div class="profile container1">
+						<div class="card">
+							<div class="face front">
+								<img src="images/KKM.png" alt="" />
+							</div>
+							<div class="face back1">
+								<h6>KYUNGMIN</h6>
+								<p><em>Back/곧 군대감</em></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<ul class="list-social-team">
+						<li class="icon-soc-team"><a href="#">&#xf09a;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf09b;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf0d5;</a></li>
+					</ul>
+				</div>
+								<div id="team33">
+									<div class="pro-bar">
+										<div class="caption">
+											<div>드립</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 83%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>입대 전 남은 시간</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 5%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>친절함</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 90%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>밤샘</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 80%"></span>
+										</div>
+									</div>
+								</div>
+			</div>
+			<div class="four columns">
+				<div id="team4">
+					<div class="profile container1">
+						<div class="card">
+							<div class="face front">
+								<img src="images/JJH.png" alt="" />
+							</div>
+							<div class="face back1">
+								<h6>JUNHONG</h6>
+								<p><em>Back/마술동아리회장</em></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<ul class="list-social-team">
+						<li class="icon-soc-team"><a href="#">&#xf09a;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf09b;</a></li>
+						<li class="icon-soc-team"><a href="#">&#xf0d5;</a></li>
+					</ul>
+				</div>
+								<div id="team44">
+									<div class="pro-bar">
+										<div class="caption">
+											<div>친화력</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 83%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>마술</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 80%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>여자친구 구함</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 200%"></span>
+										</div>
+									</div>
+									<div class="pro-bar">
+										<div class="caption">
+											<div>음주</div>
+										</div>
+										<div class="progress-bar orange stripes">
+											<span style="width: 66%"></span>
+										</div>
+									</div>
+								</div>
+			</div>
+<!--  신우오빠 넣을 자리-->
+<div class="four columns">
+	<div id="team4">
+		<div class="profile container1">
+			<div class="card">
+				<div class="face front">
+					<img src="images/SW.png" alt="" />
+				</div>
+				<div class="face back1">
+					<h6>ShinWoo</h6>
+					<p><em>팀장님 사랑해여♡</em></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="center">
+		<ul class="list-social-team">
+			<li class="icon-soc-team"><a href="#">&#xf09a;</a></li>
+			<li class="icon-soc-team"><a href="#">&#xf09b;</a></li>
+			<li class="icon-soc-team"><a href="#">&#xf0d5;</a></li>
+		</ul>
+	</div>
+					<div id="team44">
+						<div class="pro-bar">
+							<div class="caption">
+								<div>하스스톤</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 83%"></span>
+							</div>
+						</div>
+						<div class="pro-bar">
+							<div class="caption">
+								<div>재력</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 80%"></span>
+							</div>
+						</div>
+						<div class="pro-bar">
+							<div class="caption">
+								<div>차도남</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 100%"></span>
+							</div>
+						</div>
+						<div class="pro-bar">
+							<div class="caption">
+								<div>아침형</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 0%"></span>
+							</div>
+						</div>
+					</div>
+</div>
+<!-- 시누오빠 -->
+
+<!--스페셜땡스투 -->
+<div class="four columns">
+	<div id="team4">
+		<div class="profile container1">
+			<div class="card">
+				<div class="face front">
+					<img src="images/JSW.png" alt="" />
+				</div>
+				<div class="face back1">
+					<h6>SeongWon</h6>
+					<p><em>Special Thanks To</em></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="center">
+		<ul class="list-social-team">
+			<li class="icon-soc-team"><a href="#">&#xf09a;</a></li>
+			<li class="icon-soc-team"><a href="#">&#xf09b;</a></li>
+			<li class="icon-soc-team"><a href="#">&#xf0d5;</a></li>
+		</ul>
+	</div>
+					<div id="team44">
+						<div class="pro-bar">
+							<div class="caption">
+								<div>운동</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 83%"></span>
+							</div>
+						</div>
+						<div class="pro-bar">
+							<div class="caption">
+								<div>코딩</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 80%"></span>
+							</div>
+						</div>
+						<div class="pro-bar">
+							<div class="caption">
+								<div>종원바라기</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 100%"></span>
+							</div>
+						</div>
+						<div class="pro-bar">
+							<div class="caption">
+								<div>밥도둑</div>
+							</div>
+							<div class="progress-bar orange stripes">
+								<span style="width: 66%"></span>
+							</div>
+						</div>
+					</div>
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
+</div>
+</div>
+<!--여기까지 스페셜땡스투 -->
+<!--dkdkdk-->
+
+
+	<div id="gallery">
+		<div class="container">
+			<div class="sixteen columns">
+				<h1><span>Mypage</span></h1>
+			</div>
+			<div class="sixteen columns">
+				<h5><%= @user.name %></h5>
+			</div>
+		</div>
+	<div class="fil">
+		<div class="container">
+			<div class="sixteen columns">
+				<div id="portfolio-filter">
+					<ul id="filter">
+						<li><a href="#" data-filter=".lol" title="League Of Legend">lol</a></li>
+						<li><a href="#" data-filter=".battleground" title="Battle Ground">battleground</a></li>
+						<li><a href="#" data-filter=".blizzard" title="Blizzard">blizzard</a></li>
+						<li><a href="#" data-filter=".nexon" title="Nexon">nexon</a></li>
+                        <li><a href="#" data-filter=".steam" title="Steam">steam</a></li>
+                        <li><a href="#" data-filter=".mobile" title="Mobile">mobile</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="container">
+	<div class="portfolio">
+			<div class="one-third column photography">
+				<div class="project1">
+					<a class="fancybox-media" href="http://www.youtube.com/watch?v=opj24KnzrWo">
+						<div class="pro-image1">
+							<img src="images/gallery/1.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column illustration">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/2t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/2.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column photography">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/3t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/3.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column web-design">
+				<div class="project1">
+					<a class="fancybox-media" href="http://www.metacafe.com/watch/7635964/">
+						<div class="pro-image1">
+							<img src="images/gallery/4.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column motion-graphics">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/5t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/5.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column web-design">
+				<div class="project1">
+					<a class="fancybox-media" href="http://www.dailymotion.com/video/xoeylt_electric-guest-this-head-i-hold_music">
+						<div class="pro-image1">
+							<img src="images/gallery/6.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column motion-graphics">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/7t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/7.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column illustration">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/8t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/8.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+			<div class="one-third column motion-graphics">
+				<div class="project1">
+					<a class="fancybox" data-fancybox-group="gallery" href="images/gallery/9t.jpg" title="Project Title">
+						<div class="pro-image1">
+							<img src="images/gallery/9.jpg" alt="" />
+							<div class="mask-w1"></div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+
+
+	<div id="separator3">
+		<div class="container">
+			<div class="sixteen columns">
+				<h5>Description about recent <span>news</span>.</h5>
+			</div>
+		</div>
+	</div>
+
+
+<!--여기까지dkdkdk-->
+
+<!--여기까지TEST  -->
+
+	<div id="">
+		<!-- <div id="map"></div> -->
+		<div class="container">
+			<div class="eight columns">
+				<!-- 여기부터 메일창 -->
+				<!-- <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+					<label for="name">Name: *
+						<span class="error" id="err-name">please enter name</span>
+					</label>
+					<input name="name" id="name" type="text" />
+					<label for="email">E-Mail: *
+						<span class="error" id="err-email">please enter e-mail</span>
+						<span class="error" id="err-emailvld">e-mail is not a valid format</span>
+					</label>
+					<input name="email" id="email" type="text" />
+					<label for="message">Message:</label>
+					<textarea name="message" id="message"></textarea>
+					<button class="send_message" id="send">Submit</button>
+					<div class="error" id="err-form">There was a problem validating the form please check!</div>
+					<div class="error" id="err-timedout">The connection to the server timed out!</div>
+					<div class="error" id="err-state"></div>
+				</form>
+				<div id="ajaxsuccess">Successfully sent!!</div>
+			</div> -->
+			<!-- 여기까지 메일창 -->
+			<div class="eight columns">
+				<div class="text-and-icon"><div class="icon-c">&#xf003;</div><h4><a href="mailto:moment999games@gmail.com"><span>moment999games@gmail.com</span></a></h4></div>
+				<!-- <div class="text-and-icon"><div class="icon-c">&#xf10b;</div><h4>010 3212 8267</h4></div> -->
+				<div class="text-and-icon"><div class="icon-c">&#xf015;</div><h4>dongguk Univ, Seoul</h4></div>
+			</div>
+		</div>
+	</div>
+
+<<<<<<< HEAD
+=======
+	<div id="copyright">
+		<div class="container">
+			<div class="sixteen columns">
+				<div class="center">
+					<!-- <ul class="list-social-contact">
+						<li class="icon-soc-contact"><img src="images/soc/1.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/2.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/3.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/4.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/5.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/6.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/7.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/8.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/9.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/10.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/11.png" alt="" /></li>
+						<li class="icon-soc-contact"><img src="images/soc/12.png" alt="" /></li>
+					</ul> -->
+				</div>
+			</div>
+			<div class="sixteen columns">
+				<div class="border-footer"></div>
+			</div>
+			<div class="sixteen columns">
+				<p>&copy; copyright 2018 MO<span>M</span>ENT</p>
+			</div>
+		</div>
+	</div>
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180824110555) do
+=======
+ActiveRecord::Schema.define(version: 20180823152210) do
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
 
   create_table "comments", force: :cascade do |t|
     t.string   "body"
@@ -48,6 +52,7 @@ ActiveRecord::Schema.define(version: 20180824110555) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "tags", force: :cascade do |t|
     t.string   "body"
     t.integer  "user_id"
@@ -56,6 +61,8 @@ ActiveRecord::Schema.define(version: 20180824110555) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

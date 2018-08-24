@@ -1,4 +1,4 @@
-<%= form_for @post do |f| %>
+<%= form_for @post do |f|  %>
     <div class="field">
         <%= f.select(:game_type) do %>
           <% [['리그오브레전드', "lol"], ['배틀그라운드', "battle"], ['블리자드', "blizzard"], ['넥슨', "nexon"], ['스팀', "steam"], ['모바일', "mobile"], ['기타', "ext"]].each do |c| -%>
@@ -6,7 +6,6 @@
           <% end %>
         <% end %>
     </div>
-    
     <div class="field">
         <%= f.label :title, '제목' %>
         <%= f.text_field :title %>
