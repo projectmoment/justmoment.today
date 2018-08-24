@@ -1,3 +1,73 @@
+<<<<<<< HEAD
+<h1>
+    <% if user_signed_in? %>
+         <%= link_to 'My page', "/posts/mypage/#{current_user.id}", method: :get %>
+        <%= link_to 'logOut', destroy_user_session_path, method: :delete %>
+    <% else %>
+        <%= link_to 'logIn', new_user_session_path, method: :get %>
+
+        <%= link_to 'sign_up', new_user_registration_path, method: :get %>
+    <% end %>
+</h1>
+
+<h5><%= current_user.name %> 님 환영합니다!</h5>
+
+<h1>게시판 입니다!</h1>
+
+<div><a href="/posts/new">글작성하기</a></div>
+
+<div class="board">
+    <!-- 게시글 작성 -->
+    <% @posts.each do |post|%>
+        <div class="content">
+            <span><%= post.id %></span>
+
+            <span><%= getNameById(post.user_id) %></span><br>
+            <div><%= link_to image_tag(post.image), post_path(post), method: :get %></div>
+           
+            <div><%= post.title %><br></div>
+            <div><%= post.content %><br></div>
+            <% if post.user_id == current_user.id%>
+            <span><%= link_to "삭제", post_path(post.id), method: :delete%></span>
+            <span>&nbsp;</span>
+            <span><%= link_to "수정", edit_post_path(post.id), method: :get%></span>
+            <br><br>
+            <% end %>
+        </div> <!-- post content -->
+        <!--좋아요-->
+    <div>
+        <% if current_user.is_like?(post) %>
+            <%= link_to "좋아요 취소", post_like_path(post), method: "POST" %>
+        <% else %>
+            <%= link_to "좋아요", post_like_path(post), method: "POST" %>
+        <% end %>
+    </div>
+<!-- 댓글 -->
+<div class="comment">
+    <!-- 댓글 입력 -->
+    <% if user_signed_in? %>
+        <form action="/posts/<%=post.id%>/comments">
+            <input type="textarea" name="comment_body">
+            <input type="submit" value="등록">
+        </form>
+    <% end %>
+    
+    <!-- 댓글 출력 -->
+    <% post.comments.each do |comment| %>
+        <div class="body">
+        <%= link_to getNameById(comment.user_id), "/posts/mypage/#{comment.user_id}"%> :
+        <%= render_user_tag(comment.body) %>
+          <% if current_user.id == comment.user_id %>
+            <%= link_to "삭제", "/posts/#{post.id}/comments/#{comment.id}"%>
+          <% end %>
+        </div>
+
+        <hr>
+    <% end %> <!--  comment each do-->
+</div> <!-- div-comment -->
+
+    <% end %> <!-- posts each do -->
+=======
 
 	<!-- Primary Page Layout
 	================================================== -->
@@ -765,6 +835,7 @@
 							</div>
 						</div>
 					</div>
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1
 </div>
 </div>
 <!--여기까지 스페셜땡스투 -->
@@ -806,6 +877,8 @@
 		</div>
 	</div>
 
+<<<<<<< HEAD
+=======
 	<div id="copyright">
 		<div class="container">
 			<div class="sixteen columns">
@@ -834,3 +907,4 @@
 			</div>
 		</div>
 	</div>
+>>>>>>> ee3be7c5074cf9a35986584d17ef77b25b8eecc1

@@ -1,0 +1,52 @@
+
+<div>
+    <% if @user.image.present? %>
+     <%= image_tag(@user.image) %>
+     <img src="<%=@user.image%>">
+    <% else %>
+     <%= image_tag("/person.png")%>
+    <% end %>
+</div>
+
+<h5><%= @user.name %>의 마이페이지 Edit 입니다.</h5>
+<h5>Email : <%= @user.email %></h5>
+
+<% if current_user == @user %>
+<form action="/posts/updatemypage/<%=@user.id%>" enctype="multipart/form-data" method="POST">
+    <div class="field">
+       <p>이미지 </p>
+           <input type="file" name="image"><br>
+    </div>
+    <div>
+       <p>자기소개 </p>
+       <input type="textarea" name="introduction"><br><br>
+    </div>
+    <div>
+       <input type="submit" value="제출">
+    </div><br>
+</form>
+<% end %>
+
+<h3>작성한 글 by <%= @user.name %> </h3>
+<div class="board">
+    <!-- 게시글 show -->
+    <% @posts.each do |post|%>
+    
+        <div class="content">
+            
+            <span><%= post.id %></span>
+            <span><%= link_to post.title, post_path(post), method: :get%></span><br>
+            <span><%= link_to image_tag(post.image), post_path(post), method: :get%></span>
+            
+            <% if post.user_id == current_user.id%>
+            <span><a href="/posts/destroy/<%= post.id %>" data-method="POST">삭제</a></span>
+            <span>&nbsp;</span>
+            <span><a href="/posts/edit/<%= post.id %>">수정<br><br></a></span>
+            <% end %>
+        </div> <!-- post content -->
+        
+
+    <% end %> <!-- posts each do -->
+</div>
+
+<a href="/">홈으로</a>
