@@ -2,7 +2,7 @@
 
 #work{
 	position: relative;
-	background:  url(../images/1234.png) repeat;
+	background:  url(/images/1234.png) repeat;
 	width: 100%;
 	padding-top:20px;
 	padding-bottom:50px;
